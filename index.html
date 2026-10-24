@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Excel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div id="top"><b>Excel</b> &nbsp;<span id="ttl">Book1</span></div>
+<div id="tb"><span class="on" data-t="h">Home</span><span data-t="i">Insert</span><span data-t="f">Formulas</span><span data-t="d">Data</span><span data-t="v">View</span></div>
+<div id="rb"><div class="p on" id="p-h">
+<div class="g"><button onclick="newB()">New</button><button onclick="$('#fi').click()">Open</button><button onclick="save('x')">Save .xlsx</button><button onclick="save('c')">Save .csv</button></div>
+<div class="g"><button onclick="undo()">↶</button><button onclick="redo()">↷</button></div>
+<div class="g"><button onclick="sty('b')"><b>B</b></button><button onclick="sty('i')"><i>I</i></button><button onclick="sty('u')"><u>U</u></button>
+<input type="color" value="#000000" title="Text color" onchange="sty('c',this.value)"><input type="color" value="#ffff00" title="Fill color" onchange="sty('bg',this.value)"><button onclick="sty('bg','')" title="No fill">✕</button></div>
+<div class="g"><button onclick="sty('al','left')">⇤</button><button onclick="sty('al','center')">↔</button><button onclick="sty('al','right')">⇥</button></div>
+<div class="g"><select onchange="sty('ff',this.value)"><option value="">Calibri</option><option>Arial</option><option>Times New Roman</option><option>Courier New</option><option>Verdana</option></select><select onchange="sty('fs',this.value)"><option value="">11</option><option>8</option><option>10</option><option>12</option><option>14</option><option>18</option><option>24</option><option>36</option></select><button onclick="sty('bd')" title="Borders">⊞</button></div>
+<div class="g"><select onchange="sty('nf',this.value)"><option value="">General</option><option value="n2">Number 0.00</option><option value="n0">Number 1,000</option><option value="d">Date</option><option value="p">Percent</option><option value="c">Currency</option></select></div>
+<div class="g" style="border:0"><button onclick="autosum()">Σ AutoSum</button><button onclick="fillD()">Fill ↓</button><button onclick="fillR()">Fill →</button><button onclick="clr()">Clear</button></div>
+</div>
+<div class="p" id="p-i"><div class="g"><button onclick="chart('bar')">▮▮ Column chart</button><button onclick="chart('line')">📈 Line chart</button><button onclick="chart('pie')">◔ Pie chart</button></div><div class="g" style="border:0"><button onclick="shift(0,sel.r,1)">Insert row</button><button onclick="shift(0,sel.r,-1)">Delete row</button><button onclick="shift(1,sel.c,1)">Insert column</button><button onclick="shift(1,sel.c,-1)">Delete column</button></div></div>
+<div class="p" id="p-f"></div>
+<div class="p" id="p-d"><div class="g"><button onclick="sortR(1)">Sort A→Z</button><button onclick="sortR(-1)">Sort Z→A</button></div><div class="g" style="border:0"><input id="q" placeholder="Find…" style="padding:3px;border:1px solid var(--ln);background:var(--bg);color:var(--fg)" onkeydown="if(event.key=='Enter')find()"><button onclick="find()">Find next</button></div></div>
+<div class="p" id="p-v"></div></div>
+<div id="fb"><div id="nb">A1</div><span style="padding:4px 8px;color:var(--ac)"><i>fx</i></span><input id="fx"></div>
+<div id="sc"><table id="g"></table></div>
+<div id="bt"><div id="tabs"></div><div id="st"></div></div>
+<input type="file" id="fi" hidden accept=".xlsx,.xls,.csv,.tsv,.ods">
+<div id="toast"></div><div id="ch"><div id="chh"><b>Chart</b><button onclick="$('#ch').style.display='none'">✕</button></div><div id="cb"></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>window.XLSX||document.write('<script src="lib/xlsx.full.min.js"><\/script>')</script>
+<script src="js/state.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/render.js"></script>
+<script src="js/editing.js"></script>
+<script src="js/files.js"></script>
+<script src="js/input.js"></script>
+<script src="js/features.js"></script>
+<script src="js/main.js"></script></body></html>

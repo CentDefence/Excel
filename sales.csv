@@ -1,0 +1,5 @@
+Product,Q1,Q2,Q3,Total
+Apples,120,135,150,=SUM(B2:D2)
+Pears,80,95,70,=SUM(B3:D3)
+Plums,60,75,90,=SUM(B4:D4)
+Total,=SUM(B2:B4),=SUM(C2:C4),=SUM(D2:D4),=SUM(E2:E4)
